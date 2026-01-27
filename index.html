@@ -1,14 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>Moja prva stranica</title>
+    <title>Za tebe ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1518199266791-5375a83190b7");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 12px 25px;
+            margin: 15px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #yes {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background: #adb5bd;
+            position: absolute;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #d62828;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Naslov stranice</h1>
-    <p>Ovo je paragraf.</p>
+<div class="card">
+    <h1>Hej ❤️</h1>
+    <p>Imam jedno važno pitanje za tebe...</p>
+    <h2>Hoćeš li biti moj Valentino? 💘</h2>
+
+    <button id="yes">DA 💕</button>
+    <button id="no">NE 😅</button>
+
+    <div id="message">Znao sam!!! 🥰💖</div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const message = document.getElementById("message");
+
+    yesBtn.addEventListener("click", () => {
+        message.style.display = "block";
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
 
 </body>
 </html>
