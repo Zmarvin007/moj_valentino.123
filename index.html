@@ -152,15 +152,20 @@ const COMPANY_VALUE = 2000000;
 
 function calculate() {
     alert("GUMB RADI – funkcija je pozvana!");
+
     const input = document.getElementById("amount").value;
     const resultBox = document.getElementById("output");
 
     if (input === "" || input <= 0) {
-        window.alert
         resultBox.style.color = "#ef4444";
         resultBox.innerText = "Unesi ispravan iznos.";
         return;
     }
 
     const percent = (input / COMPANY_VALUE) * 100;
-     resultBox.innerText = "Možeš kupiti "+percent+"% ove firme"; 
+
+    resultBox.style.color = "#22c55e";
+    resultBox.innerText =
+        "Možeš kupiti " + percent.toFixed(2) + "% ove firme";
+}
+</script>
