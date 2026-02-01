@@ -151,21 +151,31 @@ footer {
 const COMPANY_VALUE = 2000000;
 
 function calculate() {
-    alert("GUMB RADI – funkcija je pozvana!");
+    // Dohvaćamo elemente
+    let inputElement = document.getElementById("amount");
+    let resultBox = document.getElementById("output");
+    
+    // Pretvaramo unos u broj
+    let amount = parseFloat(inputElement.value);
 
-    const input = document.getElementById("amount").value;
-    const resultBox = document.getElementById("output");
-
-    if (input === "" || input <= 0) {
+    // Provjera unosa
+    if (isNaN(amount) || amount <= 0) {
         resultBox.style.color = "#ef4444";
-        resultBox.innerText = "Unesi ispravan iznos.";
+        resultBox.innerText = "Molimo unesite ispravan iznos.";
         return;
     }
 
-    const percent = (input / COMPANY_VALUE) * 100;
+    // Izračun postotka
+    // Formula: (Ulog / Ukupna vrijednost) * 100
+    let percent = (amount / COMPANY_VALUE) * 100;
 
+    // Prikaz rezultata
     resultBox.style.color = "#22c55e";
-    resultBox.innerText =
-        "Možeš kupiti " + percent.toFixed(2) + "% ove firme";
+    
+    if (percent < 0.01) {
+        resultBox.innerText = "Udio: manje od 0.01%";
+    } else {
+        resultBox.innerText = "Tvoj udio: " + percent.toFixed(2) + "%";
+    }
 }
 </script>
