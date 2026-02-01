@@ -151,6 +151,7 @@ footer {
 const COMPANY_VALUE = 2000000;
 
 function calculate() {
+    alert("GUMB RADI – funkcija je pozvana!");
     const input = document.getElementById("amount").value;
     const resultBox = document.getElementById("output");
 
@@ -162,5 +163,4 @@ function calculate() {
     }
 
     const percent = (input / COMPANY_VALUE) * 100;
-
-    resultBox.s
+     resultBox.innerText = "Možeš kupiti "+percent+"% ove firme"; 
