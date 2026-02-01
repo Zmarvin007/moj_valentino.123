@@ -1,99 +1,163 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <title>Za tebe ❤️</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center; /* horizontalno centriranje */
-            align-items: center;     /* vertikalno centriranje */
-            background: url("https://images.unsplash.com/photo-1518199266791-5375a83190b7") center/cover no-repeat;
-        }
+<meta charset="UTF-8" />
+<title>SkillTrack – Investiraj u budućnost</title>
 
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            width: 90%;
-            max-width: 500px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
 
-        h1 {
-            color: #e63946;
-            margin-bottom: 20px;
-        }
+section {
+    padding: 80px 10%;
+}
 
-        h2 {
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
+h1, h2 {
+    color: #38bdf8;
+}
 
-        button {
-            font-size: 18px;
-            padding: 12px 25px;
-            margin: 15px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.2s;
-            position: relative;
-        }
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        #yes {
-            background: #ff4d6d;
-            color: white;
-        }
+.hero-text {
+    max-width: 500px;
+}
 
-        #no {
-            background: #adb5bd;
-        }
+button {
+    padding: 12px 25px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        #message {
-            margin-top: 20px;
-            font-size: 22px;
-            color: #d62828;
-            display: none;
-        }
-    </style>
+button:hover {
+    background: #0ea5e9;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+</style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>❤️ MICIKAAAAAAA ❤️</h1>
-    <h2>💘 Želite li biti moj Valentino vaša damosti? 💘</h2>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>SkillTrack</h1>
+        <p>
+            Pametna aplikacija za praćenje osobnog razvoja, ciljeva i
+            profesionalnog rasta.
+        </p>
+        <button onclick="document.getElementById('invest').scrollIntoView({behavior:'smooth'})">
+            Investiraj sada
+        </button>
+    </div>
 
-    <button id="yes">DA 💕</button>
-    <button id="no">NE 😅</button>
+    <div class="card">
+        <h2>Vrijednost firme</h2>
+        <p>Procjena: <strong>2.000.000 €</strong></p>
+        <p>Brzorastući edtech startup s globalnim potencijalom.</p>
+    </div>
+</section>
 
-    <div id="message">I BOLJE TI JE hihihi!!! 🥰💖</div>
+<!-- FEATURES -->
+<section>
+<h2>Zašto SkillTrack?</h2>
+
+<div class="features">
+    <div class="feature-box">📊 Napredna statistika</div>
+    <div class="feature-box">🎯 Pametni ciljevi</div>
+    <div class="feature-box">🤖 AI Coach</div>
+    <div class="feature-box">🏆 Gamifikacija</div>
+    <div class="feature-box">📄 PDF izvještaji</div>
+    <div class="feature-box">🌍 Globalno tržište</div>
 </div>
+</section>
+
+<!-- INVEST -->
+<section id="invest">
+<h2>Uloži u SkillTrack</h2>
+
+<div class="card">
+    <p>Unesi iznos ulaganja (€):</p>
+
+    <input
+        type="number"
+        id="amount"
+        placeholder="npr. 10000"
+    />
+
+    <button onclick="calculate()">Izračunaj udio</button>
+
+    <div id="output" class="result"></div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 SkillTrack d.o.o. – Startup for the future 🚀</p>
+</footer>
 
 <script>
-    const yesBtn = document.getElementById("yes");
-    const noBtn = document.getElementById("no");
-    const message = document.getElementById("message");
+const COMPANY_VALUE = 2000000;
 
-    yesBtn.addEventListener("click", () => {
-        message.style.display = "block";
-    });
+function calculate() {
+    const input = document.getElementById("amount").value;
+    const resultBox = document.getElementById("output");
 
-    noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    if (input === "" || input <= 0) {
+        resultBox.style.color = "#ef4444";
+        resultBox.innerText = "Unesi ispravan iznos.";
+        return;
+    }
 
-        noBtn.style.position = "absolute";
-        noBtn.style.left = x + "px";
-        noBtn.style.top = y + "px";
-    });
-</script>
+    const percent = (input / COMPANY_VALUE) * 100;
 
-</body>
-</html>
+    resultBox.s
