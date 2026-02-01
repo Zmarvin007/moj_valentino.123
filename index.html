@@ -57,6 +57,7 @@ input {
     margin-top: 10px;
     border-radius: 5px;
     border: none;
+    
 }
 
 .result {
@@ -135,6 +136,8 @@ footer {
         type="number"
         id="amount"
         placeholder="npr. 10000"
+        min="0"
+        max="2000000"
     />
 
     <button onclick="calculate()">Izračunaj udio</button>
