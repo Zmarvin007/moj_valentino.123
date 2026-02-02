@@ -1,221 +1,211 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>SkillTrack – Investiraj u budućnost</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #0f172a, #020617);
-    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
 }
 
-section {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER / BANNER */
+header {
+    background: linear-gradient(120deg, #0ea5e9, #38bdf8);
+    color: white;
     padding: 80px 10%;
 }
 
-h1, h2 {
-    color: #38bdf8;
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+header p {
+    font-size: 20px;
+    max-width: 700px;
 }
 
-.hero-text {
-    max-width: 500px;
+/* CONTENT */
+section {
+    padding: 60px 10%;
 }
 
-button {
-    padding: 12px 25px;
-    background: #38bdf8;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    background: #0ea5e9;
-    transform: translateY(-2px);
+p {
+    max-width: 900px;
 }
 
-.card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 14px;
-    max-width: 420px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-}
-
-.result {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.feature-box {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-    background: #334155;
-}
-
-/* APP PREVIEW */
-.app-preview {
+/* IMAGE SECTIONS */
+.image-block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.app-preview img {
+.image-block img {
     width: 100%;
-    border-radius: 14px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* INVEST PACKAGES */
+.packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.package {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-top: 6px solid #38bdf8;
     transition: 0.3s;
 }
 
-.app-preview img:hover {
-    transform: scale(1.03);
+.package:hover {
+    transform: translateY(-8px);
 }
 
+.package h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0ea5e9;
+    margin: 15px 0;
+}
+
+.package ul {
+    padding-left: 20px;
+}
+
+.package li {
+    margin-bottom: 8px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0284c7;
+}
+
+/* FOOTER */
 footer {
+    background: #020617;
+    color: #cbd5f5;
     text-align: center;
-    padding: 20px;
-    background: black;
-    color: #94a3b8;
+    padding: 30px;
+    margin-top: 60px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>SkillTrack</h1>
-        <p>
-            Pametna aplikacija za praćenje osobnog razvoja, ciljeva i
-            profesionalnog rasta.
-        </p>
-        <button onclick="document.getElementById('invest').scrollIntoView({behavior:'smooth'})">
-            Investiraj sada
-        </button>
-    </div>
+<!-- BANNER -->
+<header>
+    <h1>SkillTrack</h1>
+    <p>
+        Moderna platforma za praćenje razvoja vještina, edukaciju i
+        profesionalni rast. Investiraj u rješenje spremno za globalno tržište.
+    </p>
+</header>
 
-    <div class="card">
-        <h2>Vrijednost firme</h2>
-        <p>Procjena: <strong>2.000.000 €</strong></p>
-        <p>Brzorastući edtech startup s globalnim potencijalom.</p>
-    </div>
-</section>
-
-<!-- FEATURES -->
+<!-- INTRO -->
 <section>
-<h2>Zašto SkillTrack?</h2>
+    <h2>O projektu</h2>
+    <p>
+        SkillTrack je digitalna aplikacija koja korisnicima omogućuje praćenje
+        osobnog razvoja kroz ciljeve, analitiku i gamifikaciju. Platforma je
+        prilagođena pojedincima, školama i tvrtkama.
+    </p>
 
-<div class="features">
-    <div class="feature-box">📊 Napredna statistika</div>
-    <div class="feature-box">🎯 Pametni ciljevi</div>
-    <div class="feature-box">🤖 AI Coach</div>
-    <div class="feature-box">🏆 Gamifikacija</div>
-    <div class="feature-box">📄 PDF izvještaji</div>
-    <div class="feature-box">🌍 Globalno tržište</div>
-</div>
-</section>
-
-<!-- APP IMAGES -->
-<section>
-<h2>Pregled aplikacije</h2>
-
-<div class="app-preview">
-    <img src="123.png" alt="SkillTrack dashboard">
-    <img src="12.png" alt="Dodavanje novog skilla">
-    <img src="1.png" alt="Statistika napretka">
-</div>
+    <div class="image-block">
+        <img src="1.png" alt="SkillTrack dashboard">
+        <img src="12.png" alt="Dodavanje vještina">
+        <img src="123.png" alt="Statistika napretka">
+    </div>
 </section>
 
 <!-- INVEST -->
-<section id="invest">
-<h2>Uloži u SkillTrack</h2>
+<section>
+    <h2>Vrste ulaganja</h2>
+    <p>
+        Odaberi paket ulaganja prema razini uključenosti i očekivanom povratu.
+    </p>
 
-<div class="card">
-    <p>Unesi iznos ulaganja (€):</p>
+    <div class="packages">
+        <!-- STARTER -->
+        <div class="package">
+            <h3>Starter ulaganje</h3>
+            <p class="price">10 €</p>
+            <ul>
+                <li>Osnovni investicijski udio</li>
+                <li>Godišnji izvještaj o rastu</li>
+                <li>Rani pristup novim funkcijama</li>
+            </ul>
+            <button>Odaberi paket</button>
+        </div>
 
-    <input
-        type="number"
-        id="amount"
-        placeholder="npr. 10000"
-        min="1"
-        max="2000000"
-    />
+        <!-- PRO -->
+        <div class="package">
+            <h3>Pro ulaganje</h3>
+            <p class="price">45€</p>
+            <ul>
+                <li>Povećani vlasnički udio</li>
+                <li>Detaljni financijski izvještaji</li>
+                <li>Sudjelovanje u razvojnim odlukama</li>
+            </ul>
+            <button>Odaberi paket</button>
+        </div>
 
-    <button onclick="calculate()">Izračunaj udio</button>
-
-    <div id="output" class="result"></div>
-</div>
+        <!-- PARTNER -->
+        <div class="package">
+            <h3>Partner ulaganje</h3>
+            <p class="price">100€</p>
+            <ul>
+                <li>Strateško partnerstvo</li>
+                <li>Pristup roadmapu proizvoda</li>
+                <li>Mogućnost licenciranja i suradnje</li>
+            </ul>
+            <button>Kontaktiraj nas</button>
+        </div>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 SkillTrack d.o.o. – Startup for the future 🚀</p>
+    <p>© 2026 SkillTrack d.o.o. – Investiraj u znanje 🚀</p>
 </footer>
-
-<script>
-const COMPANY_VALUE = 2000000;
-
-function calculate() {
-    let inputElement = document.getElementById("amount");
-    let resultBox = document.getElementById("output");
-    let amount = parseFloat(inputElement.value);
-
-    if (isNaN(amount) || amount <= 0) {
-        resultBox.style.color = "#ef4444";
-        resultBox.innerText = "Molimo unesite ispravan iznos.";
-        return;
-    }
-
-    if (amount > COMPANY_VALUE) {
-        resultBox.style.color = "#ef4444";
-        resultBox.innerText = "Maksimalni iznos ulaganja je 2.000.000 €.";
-        inputElement.value = COMPANY_VALUE;
-        return;
-    }
-
-    let percent = (amount / COMPANY_VALUE) * 100;
-
-    resultBox.style.color = "#22c55e";
-    resultBox.innerText = "Tvoj udio: " + percent.toFixed(2) + "%";
-}
-</script>
 
 </body>
 </html>
