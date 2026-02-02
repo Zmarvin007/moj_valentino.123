@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0f172a;
+    background: linear-gradient(180deg, #0f172a, #020617);
     color: white;
 }
 
@@ -25,6 +25,7 @@ h1, h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
 }
 
 .hero-text {
@@ -35,38 +36,38 @@ button {
     padding: 12px 25px;
     background: #38bdf8;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #0ea5e9;
+    transform: translateY(-2px);
 }
 
 .card {
     background: #1e293b;
     padding: 30px;
-    border-radius: 12px;
-    max-width: 400px;
+    border-radius: 14px;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
-    
+    font-size: 16px;
 }
 
 .result {
-    width: 400px;
-    height: 40px;
     margin-top: 15px;
     font-size: 18px;
     font-weight: bold;
-    color: #22c55e;
 }
 
 .features {
@@ -78,13 +79,40 @@ input {
 .feature-box {
     background: #1e293b;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    background: #334155;
+}
+
+/* APP PREVIEW */
+.app-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.app-preview img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.app-preview img:hover {
+    transform: scale(1.03);
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background: black;
+    color: #94a3b8;
 }
 </style>
 </head>
@@ -125,6 +153,17 @@ footer {
 </div>
 </section>
 
+<!-- APP IMAGES -->
+<section>
+<h2>Pregled aplikacije</h2>
+
+<div class="app-preview">
+    <img src="123.png" alt="SkillTrack dashboard">
+    <img src="12.png" alt="Dodavanje novog skilla">
+    <img src="1.png" alt="Statistika napretka">
+</div>
+</section>
+
 <!-- INVEST -->
 <section id="invest">
 <h2>Uloži u SkillTrack</h2>
@@ -136,7 +175,7 @@ footer {
         type="number"
         id="amount"
         placeholder="npr. 10000"
-        min="0"
+        min="1"
         max="2000000"
     />
 
@@ -154,31 +193,29 @@ footer {
 const COMPANY_VALUE = 2000000;
 
 function calculate() {
-    // Dohvaćamo elemente
     let inputElement = document.getElementById("amount");
     let resultBox = document.getElementById("output");
-    
-    // Pretvaramo unos u broj
     let amount = parseFloat(inputElement.value);
 
-    // Provjera unosa
     if (isNaN(amount) || amount <= 0) {
         resultBox.style.color = "#ef4444";
         resultBox.innerText = "Molimo unesite ispravan iznos.";
         return;
     }
 
-    // Izračun postotka
-    // Formula: (Ulog / Ukupna vrijednost) * 100
+    if (amount > COMPANY_VALUE) {
+        resultBox.style.color = "#ef4444";
+        resultBox.innerText = "Maksimalni iznos ulaganja je 2.000.000 €.";
+        inputElement.value = COMPANY_VALUE;
+        return;
+    }
+
     let percent = (amount / COMPANY_VALUE) * 100;
 
-    // Prikaz rezultata
     resultBox.style.color = "#22c55e";
-    
-    if (percent < 0.01) {
-        resultBox.innerText = "Udio: manje od 0.01%";
-    } else {
-        resultBox.innerText = "Tvoj udio: " + percent.toFixed(2) + "%";
-    }
+    resultBox.innerText = "Tvoj udio: " + percent.toFixed(2) + "%";
 }
 </script>
+
+</body>
+</html>
