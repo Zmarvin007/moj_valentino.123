@@ -5,6 +5,31 @@
 <title>SkillTrack – Investiraj u budućnost</title>
 
 <style>
+/* VIDEO SECTION */
+.video-section {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    background: black;
+}
+
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
@@ -140,6 +165,18 @@ footer {
         profesionalni rast. Investiraj u rješenje spremno za globalno tržište.
     </p>
 </header>
+<!-- VIDEO HERO -->
+<section class="video-section">
+    <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Vaš preglednik ne podržava video.
+    </video>
+
+    <div class="video-overlay">
+        <h2>Investiraj u budućnost učenja</h2>
+        <p>Pogledaj kako SkillTrack mijenja način razvoja vještina.</p>
+    </div>
+</section>
 
 <!-- INTRO -->
 <section>
