@@ -254,7 +254,7 @@ footer {
 
     <div class="calculator">
         <h3>Izračunaj svoj udio</h3>
-        <p>Vrijednost tvrtke: <strong>10.000 €</strong></p>
+        <p>Vrijednost tvrtke: <strong>100.000 €</strong></p>
 
         <input type="number" id="investment" placeholder="Unesi iznos (€)">
         <button onclick="calculateShare()">Izračunaj</button>
@@ -270,7 +270,7 @@ footer {
 
 <script>
 function calculateShare() {
-    const companyValue = 10000;
+    const companyValue = 100000;
     const investment = parseFloat(document.getElementById("investment").value);
 
     if (!investment || investment <= 0) {
