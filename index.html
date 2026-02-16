@@ -2,9 +2,20 @@
 <html lang="hr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SkillTrack – Investiraj u budućnost</title>
 
 <style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
 /* VIDEO SECTION */
 .video-section {
     width: 100%;
@@ -30,24 +41,11 @@
     border-radius: 12px;
 }
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f8fafc;
-    color: #0f172a;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* HEADER / BANNER */
+/* HEADER */
 header {
     background: linear-gradient(120deg, #0ea5e9, #38bdf8);
     color: white;
-    padding: 80px 10%;
+    padding: 60px 10%;
 }
 
 header h1 {
@@ -61,20 +59,13 @@ header p {
 }
 
 /* CONTENT */
-section {
-    padding: 60px 10%;
-}
+section { padding: 60px 10%; }
 
-h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
+h2 { font-size: 32px; margin-bottom: 20px; }
 
-p {
-    max-width: 900px;
-}
+p { max-width: 900px; }
 
-/* IMAGE SECTIONS */
+/* IMAGE BLOCK */
 .image-block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -103,10 +94,16 @@ p {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     border-top: 6px solid #38bdf8;
     transition: 0.3s;
+    text-align: center;
 }
 
 .package:hover {
     transform: translateY(-8px);
+}
+
+.package-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
 .package h3 {
@@ -123,11 +120,10 @@ p {
 
 .package ul {
     padding-left: 20px;
+    text-align: left;
 }
 
-.package li {
-    margin-bottom: 8px;
-}
+.package li { margin-bottom: 8px; }
 
 button {
     margin-top: 20px;
@@ -140,8 +136,32 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #0284c7;
+button:hover { background: #0284c7; }
+
+/* CALCULATOR */
+.calculator {
+    margin-top: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.calculator input {
+    padding: 12px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-right: 10px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0ea5e9;
 }
 
 /* FOOTER */
@@ -157,7 +177,6 @@ footer {
 
 <body>
 
-<!-- BANNER -->
 <header>
     <h1>SkillTrack</h1>
     <p>
@@ -165,84 +184,107 @@ footer {
         profesionalni rast. Investiraj u rješenje spremno za globalno tržište.
     </p>
 </header>
-<!-- VIDEO HERO -->
+
 <section class="video-section">
     <video autoplay muted loop playsinline>
         <source src="video.mp4" type="video/mp4">
-        Vaš preglednik ne podržava video.
     </video>
-
     <div class="video-overlay">
         <h2>Investiraj u budućnost učenja</h2>
         <p>Pogledaj kako SkillTrack mijenja način razvoja vještina.</p>
     </div>
 </section>
 
-<!-- INTRO -->
 <section>
     <h2>O projektu</h2>
     <p>
-        SkillTrack je digitalna aplikacija koja korisnicima omogućuje praćenje
-        osobnog razvoja kroz ciljeve, analitiku i gamifikaciju. Platforma je
-        prilagođena pojedincima, školama i tvrtkama.
+        SkillTrack je digitalna aplikacija za praćenje osobnog razvoja kroz ciljeve,
+        analitiku i gamifikaciju.
     </p>
 
     <div class="image-block">
-        <img src="1.png" alt="SkillTrack dashboard">
-        <img src="12.png" alt="Dodavanje vještina">
-        <img src="123.png" alt="Statistika napretka">
+        <img src="1.png" alt="">
+        <img src="12.png" alt="">
+        <img src="123.png" alt="">
     </div>
 </section>
 
-<!-- INVEST -->
 <section>
     <h2>Vrste ulaganja</h2>
-    <p>
-        Odaberi paket ulaganja prema razini uključenosti i očekivanom povratu.
-    </p>
 
     <div class="packages">
-        <!-- STARTER -->
+
         <div class="package">
+            <div class="package-icon">🌱</div>
             <h3>Starter ulaganje</h3>
             <p class="price">10 €</p>
             <ul>
                 <li>Osnovni investicijski udio</li>
-                <li>Godišnji izvještaj o rastu</li>
-                <li>Rani pristup novim funkcijama</li>
+                <li>Godišnji izvještaj</li>
+                <li>Rani pristup funkcijama</li>
             </ul>
             <button>Odaberi paket</button>
         </div>
 
-        <!-- PRO -->
         <div class="package">
+            <div class="package-icon">📈</div>
             <h3>Pro ulaganje</h3>
-            <p class="price">45€</p>
+            <p class="price">45 €</p>
             <ul>
                 <li>Povećani vlasnički udio</li>
-                <li>Detaljni financijski izvještaji</li>
-                <li>Sudjelovanje u razvojnim odlukama</li>
+                <li>Detaljni izvještaji</li>
+                <li>Sudjelovanje u razvoju</li>
             </ul>
             <button>Odaberi paket</button>
         </div>
 
-        <!-- PARTNER -->
         <div class="package">
+            <div class="package-icon">🤝</div>
             <h3>Partner ulaganje</h3>
-            <p class="price">100€</p>
+            <p class="price">100 €</p>
             <ul>
                 <li>Strateško partnerstvo</li>
-                <li>Pristup roadmapu proizvoda</li>
-                <li>Mogućnost licenciranja i suradnje</li>
+                <li>Pristup roadmapu</li>
+                <li>Mogućnost licenciranja</li>
             </ul>
             <button>Kontaktiraj nas</button>
         </div>
+
     </div>
+
+    <div class="calculator">
+        <h3>Izračunaj svoj udio</h3>
+        <p>Vrijednost tvrtke: <strong>10.000 €</strong></p>
+
+        <input type="number" id="investment" placeholder="Unesi iznos (€)">
+        <button onclick="calculateShare()">Izračunaj</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
 </section>
 
 <footer>
     <p>© 2026 SkillTrack d.o.o. – Investiraj u znanje 🚀</p>
 </footer>
+
+<script>
+function calculateShare() {
+    const companyValue = 10000;
+    const investment = parseFloat(document.getElementById("investment").value);
+
+    if (!investment || investment <= 0) {
+        document.getElementById("result").innerText = "Unesite valjan iznos.";
+        return;
+    }
+
+    const percentage = (investment / companyValue) * 100;
+
+    document.getElementById("result").innerText =
+        "Za ulaganje od " + investment + " € dobivate " +
+        percentage.toFixed(2) + "% udjela u firmi.";
+}
+</script>
 
 </body>
 </html>
